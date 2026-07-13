@@ -1,0 +1,302 @@
+/* =============================================
+   login.scss - Apple-Inspired Premium Design
+   ============================================= */
+
+.login-container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  overflow: hidden;
+  background: linear-gradient(135deg, #1a0033, #0f001f);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+               Helvetica, Arial, sans-serif;
+  position: relative;
+}
+
+.login-left {
+  flex: 1;
+  background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.65)),
+              url('https://images.unsplash.com/photo-1617791160505-6f00504e3519?w=1200') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  position: relative;
+  color: white;
+}
+
+.quote-overlay {
+  position: relative;
+  z-index: 2;
+  max-width: 420px;
+}
+
+.wise-quote {
+  font-size: 1rem;
+  letter-spacing: 4px;
+  opacity: 0.85;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.main-text {
+  font-size: 3.9rem;
+  font-weight: 700;
+  line-height: 1.05;
+  margin: 1rem 0 1.5rem;
+  letter-spacing: -0.02em;           /* Apple style tight tracking */
+}
+
+.sub-text {
+  font-size: 1.15rem;
+  opacity: 0.9;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* ===================== RIGHT SIDE ===================== */
+.login-right {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(24px);
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  position: relative;
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+               Helvetica, Arial, sans-serif;
+}
+
+/* Subtle Red CPU Lines */
+.login-right::before,
+.login-right::after {
+  content: '';
+  position: absolute;
+  background: linear-gradient(90deg, transparent, #ff3366, transparent);
+  opacity: 0.15;
+  height: 1px;
+}
+
+.login-right::before { top: 25%; left: -20%; right: -20%; transform: rotate(-12deg); }
+.login-right::after { top: 65%; left: -30%; right: -10%; transform: rotate(18deg); }
+
+/* Floating Tech Nodes */
+.tech-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.circuit-node {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #ff3366;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #ff3366, 0 0 24px #ff6699;
+  animation: floatNode 15s infinite linear;
+}
+
+.node1 { top: 20%; left: 15%; animation-delay: 0s; }
+.node2 { top: 45%; right: 18%; animation-delay: 4s; }
+.node3 { bottom: 28%; left: 22%; animation-delay: 8s; }
+
+.circuit-line {
+  position: absolute;
+  top: 35%;
+  left: 12%;
+  width: 80px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #ff3366, transparent);
+  opacity: 0.3;
+  animation: pulseLine 8s infinite;
+}
+
+@keyframes floatNode {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  50%  { transform: translate(25px, -35px) rotate(180deg); }
+  100% { transform: translate(0, 0) rotate(360deg); }
+}
+
+@keyframes pulseLine {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.5; }
+}
+
+/* Form - Apple Style */
+.form-wrapper {
+  width: 100%;
+  max-width: 420px;
+  position: relative;
+  z-index: 2;
+}
+
+.logo {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 2.2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  letter-spacing: -0.01em;
+}
+
+h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  color: rgba(255, 255, 255, 0.78);
+  margin-bottom: 2.8rem;
+  font-size: 1.05rem;
+}
+
+.input-group {
+  margin-bottom: 1.6rem;
+
+  label {
+    display: block;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+  }
+
+  input {
+    width: 100%;
+    padding: 1.05rem 1.3rem;
+    background: rgba(255, 255, 255, 0.09);
+    border: 1.5px solid rgba(255, 255, 255, 0.18);
+    border-radius: 16px;
+    color: white;
+    font-size: 1.02rem;
+    font-weight: 400;
+    backdrop-filter: blur(12px);
+    transition: all 0.4s ease;
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.45);
+    }
+
+    &:focus {
+      border-color: #c084fc;
+      box-shadow: 0 0 0 4px rgba(192, 132, 252, 0.15);
+      transform: translateY(-1px);
+    }
+  }
+}
+
+.sign-in-btn {
+  width: 100%;
+  padding: 1.1rem;
+  background: linear-gradient(90deg, #a855f7, #ec4899);
+  color: white;
+  border: none;
+  border-radius: 16px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.4s ease;
+  letter-spacing: -0.01em;
+
+  &:hover:not(:disabled) {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(168, 85, 247, 0.45);
+  }
+}
+
+.google-btn {
+  width: 100%;
+  padding: 1.05rem;
+  background: rgba(255, 255, 255, 0.95);
+  color: #1f2937;
+  border: none;
+  border-radius: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  img { width: 24px; height: 24px; }
+
+  &:hover {
+    background: white;
+    transform: translateY(-2px);
+  }
+}
+
+.divider {
+  margin: 2.2rem 0;
+  text-align: center;
+  position: relative;
+  color: rgba(255, 255, 255, 0.65);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0; right: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  span {
+    background: rgba(15, 0, 31, 0.8);
+    padding: 0 22px;
+    font-size: 0.95rem;
+  }
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.98rem;
+}
+
+.remember {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.forgot {
+  color: #c4b5fd;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.forgot:hover { text-decoration: underline; }
+
+.error {
+  color: #f87171;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.signup-link {
+  text-align: center;
+  margin-top: 2rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.98rem;
+
+  a {
+    color: #c4b5fd;
+    text-decoration: none;
+    font-weight: 500;
+  }
+}
