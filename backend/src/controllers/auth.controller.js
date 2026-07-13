@@ -5,6 +5,8 @@ import { sendToken } from "../utils/sendToken.js";
 
 // Register User
 export const registerUser = async (req, res) => {
+  console.log("REGISTER API HIT");
+console.log(req.body);
   try {
     const { username, email, password, phone, location } = req.body;
 
@@ -83,3 +85,7 @@ export const loginUser = async (req, res) => {
     });
   }
 };
+export const googleCallback = async(req,res) =>{
+  console.log(req.user);
+  res.redirect("http://localhost:5173/")
+}

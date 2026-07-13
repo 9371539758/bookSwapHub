@@ -26,29 +26,20 @@ const userSchema = new mongoose.Schema(
       select: false,
     },
     phone: {
-  type: String,
-  required: [true, "Phone number is required"],
-  unique: true,
-  trim: true,
-},
-
-    location: {
-      city: {
-        type: String,
-        required: true,
-        trim: true,
-      },
-      state: {
-        type: String,
-        required: true,
-        trim: true,
-      },
-      
+      type: String,
+      required: [true, "Phone number is required"],
+      unique: true,
+      trim: true,
     },
+
+  location: {
+  type: String,
+  required: true,
+}
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 // Hash password before saving
@@ -58,7 +49,7 @@ userSchema.pre("save", async function (next) {
   }
 
   this.password = await bcrypt.hash(this.password, 10);
-//   next();
+  //   next();
 });
 
 // Compare password during login

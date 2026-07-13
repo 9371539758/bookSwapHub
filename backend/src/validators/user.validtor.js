@@ -17,17 +17,17 @@ export const registerValidator = [
     .isLength({ min: 8 })
     .withMessage("Password must be at least 8 characters"),
 
-  body("location.city")
-    .notEmpty()
-    .withMessage("City is required"),
+  // body("location.city")
+  //   .notEmpty()
+  //   .withMessage("City is required"),
 
-  body("location.state")
-    .notEmpty()
-    .withMessage("State is required"),
+  // body("location.state")
+  //   .notEmpty()
+  //   .withMessage("State is required"),
 
-  body("location.country")
-    .notEmpty()
-    .withMessage("Country is required"),
+  // body("location.country")
+  //   .notEmpty()
+  //   .withMessage("Country is required"),
 
 
 body("phone")
