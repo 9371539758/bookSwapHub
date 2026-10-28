@@ -1,22 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import Register from "../features/auth/pages/Register";
 import { Login } from "../features/auth/pages/Login";
+import GoogleLoginSuccess from "../pages/GoogleLoginSuccess.jsx"
 const router = createBrowserRouter([
   {
     path: "/",
-    element: (
-      <h1
-        style={{
-          textAlign: "center",
-          marginTop: "100px",
-          color: "#2563eb",
-          fontSize: "3rem",
-          fontFamily: "Arial, sans-serif",
-        }}
-      >
-        Hello
-      </h1>
-    ),
+    element:<GoogleLoginSuccess/>
   },
   {
     path: "/register",
